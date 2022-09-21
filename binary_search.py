@@ -1,20 +1,16 @@
-
-beg = 0;
-end = 7;
-mid = int((beg + end)/2)
-a = [1,2,3,4,5,6,7,8]
+a = [10,28,31,43,54,61,74,87]
+beg = 0
+end = len(a) - 1
 print(a)    
-n = int(input("Enter a number from 1 to 8: "))
-p = n - 1
-c = 1000
-if (p >= 0 and p <= 7):
-    while (c != mid):
-        if (p < mid):
-            end = mid;
-        elif (p > mid):
-            beg = mid;
-        else:
-            c = mid;
+n = int(input("Enter an element: "))
+while (beg <= end):
+    mid = (beg + end)//2
+    if (a[mid] < n):
+        beg = mid + 1
+    elif (a[mid] > n):
+        end = mid - 1
+    else:
+        print("The position is: ", mid)
+        quit()
 else:
     print("Invalid number. Idiot.")
-print("The position is: ", c)
